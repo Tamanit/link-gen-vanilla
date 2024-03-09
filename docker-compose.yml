@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+    networks:
+      - app
+    volumes:
+      - ./app/:/app
+
+  php:
+    build:
+      context: app
+      dockerfile: Dockerfile
+    networks:
+      - app
+    volumes:
+      - ./app/:/app
+    depends_on:
+      - db
+      - nginx
+
+  db:
+    image: postgres:16.2
+    environment:
+      POSTGRES_PASSWORD: 'root'
+      POSTGRES_USER: 'root'
+    networks:
+      - app
+    ports:
+      - '5432:5432'
+
+networks:
+  app:
+    driver: bridge
+
+

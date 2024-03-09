@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/mainPage.css">
+    <title>Links Shorter</title>
+</head>
+<body>
+
+<h2>Сократитель ссылок</h2>
+<div class="wrapper">
+    <section class="panel-line">
+        <div class="row row-input" name="formInput" >
+            <input id="userUrl" type="url" class="inputs input" placeholder="http:// . . ." name="input" required>
+            <button id="submitButton" class="button submit">сократить</button>
+        </div>
+    </section>
+    <section class="panel-line">
+        <div class="row row-output" name="formOutput">
+            <input id="shortUrlInput" type="url" class="inputs output" readonly value="">
+            <button id="copyButton" class="button copy">копировать</button>
+        </div>
+    </section>
+</div>
+
+<script src="../js/mainPage.js"></script>
+</body>
+</html>
